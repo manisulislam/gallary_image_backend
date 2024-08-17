@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s5uvi*n^f0+o-ybzqii!)5m_d6i+i$k!1gmdkm^u-(t89wo+8z'
+SECRET_KEY=os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -27,9 +27,9 @@ ALLOWED_HOSTS = ["*"]
 
 
 cloudinary.config(
-    cloud_name='do43j9sbc',
-    api_key='741634422434641',
-    api_secret='ZoLW0tR1J95E3enOTn4DL3FYxiQ',
+    cloud_name=os.environ.get("cloud_name"),
+    api_key=os.environ.get("api_key"),
+    api_secret=os.environ.get("api_secret"),
     secure=True
 )
 
